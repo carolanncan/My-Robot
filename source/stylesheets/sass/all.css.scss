@@ -188,20 +188,27 @@ figure.feature{
     font-style:italic;
     margin-bottom: 3%;
     text-align: center;
-    color:$primary-a;}
+    color:$primary-c;
+    @include media($tablet){font-size:em(15);}}
 }
 
 section{
   @include media($tablet){@include pad(4%);}
   aside {
-    @include media($tablet){@include span-columns(4);}
+    @include media($tablet){
+      @include span-columns(4);
+      text-align: center;}
     @include span-columns(3);
     @include pad(default);
     border-top:1px solid $neutral-light;
       img{
         display:block;
         margin:8% 0;
-        float:left;}}}
+        float:left;
+        @include media($tablet){
+          margin:8% auto;
+          float:none;}}}
+}
     article{
       @include media($tablet){
         @include span-columns(4);}
@@ -241,7 +248,7 @@ footer{
       font-size:em(18);
       margin-bottom: 3%;}
     p{
-      font-family:'Merriweather Sans', sans-serif;
+      font-family:'Merriweather_Sans', sans-serif;
       font-size:em(17);
       color:$primary-c;}
 }
