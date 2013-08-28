@@ -47,6 +47,10 @@ activate :livereload
 #   end
 # end
 
+activate :directory_indexes
+
+set :build_dir, "tmp"
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
@@ -59,7 +63,7 @@ set :relative_links, true
 configure :build do
 
 #set :index_file, "./build/index.html"  
-activate :directory_indexes
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
