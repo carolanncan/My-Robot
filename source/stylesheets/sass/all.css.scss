@@ -11,7 +11,7 @@ $visual-grid-color: red;
 
 @include font-face(HoltwoodOneSC, '../fonts/Holtwood_One_SC/HoltwoodOneSC', bold);
 @include font-face(Merriweather, '../fonts/Merriweather/Merriweather-Bold', bold, italic);
-@include font-face(Merriweather, '../fonts/Merriweather/Merriweather-Regular',italic, normal);
+@include font-face(Merriweather, '../fonts/Merriweather/Merriweather-Regular',normal, italic);
 @include font-face(Merriweather_Sans, '../fonts/Merriweather_Sans/MerriweatherSans-Bold', bold);
 @include font-face(Merriweather_Sans, '../fonts/Merriweather_Sans/MerriweatherSans-Regular', normal);
 
@@ -35,7 +35,6 @@ body {
 h1{
   color:$primary-a;
   font-family:'HoltwoodOneSC';
-  font-variant:italic;
   font-size:em(40);
   line-height: 120%;
   text-align:center;
@@ -45,7 +44,7 @@ h1{
 }
 
 h2{
-  color:$secondary-b;
+  color:$secondary-a;
   font-size:em(27);
   font-weight:900;
   font-style:italic;
@@ -90,7 +89,7 @@ p{
 }
 
 a{
-  color:$secondary-b;
+  color:$secondary-a;
   text-decoration: none;
     &:hover {color: $primary-b;
     img:hover{
@@ -150,24 +149,22 @@ figure{
   margin:0;
     img{
       display:block;
-      margin:0 auto 5% auto;
+      margin:0 auto 2% auto;
       @include media($mobile){
         max-width:em(300);
         height:auto;}
       @include media($tablet){
-        max-width:em(350);
+        max-width:em(400);
         height:auto;
         display:block;
-        margin:0 auto;
-        float:left;}}
+        margin:0 auto;;}}
     figcaption{
       @include pad(default);
-      font-style:italic;  
+      font-style:italic;
       text-align: center;
       color:$primary-c;
         @include media($tablet){
-          @include span-columns(4);
-          text-align:left;}}
+          @include span-columns(4);}}
 }
 
 figure.feature{
@@ -183,9 +180,6 @@ figure.feature{
           float:none;}}
   figcaption{
     @include pad(2% 0 0 3%);
-    font-size:em(18);
-    font-weight:400;
-    font-style:italic;
     margin-bottom: 3%;
     text-align: center;
     color:$primary-c;
@@ -194,40 +188,37 @@ figure.feature{
 
 section{
   @include media($tablet){@include pad(4%);}
-  aside {
-    @include media($tablet){
-      @include span-columns(4);
-      text-align: center;}
-    @include span-columns(3);
-    @include pad(default);
-    border-top:1px solid $neutral-light;
-      img{
-        display:block;
-        margin:8% 0;
-        float:left;
-        @include media($tablet){
-          margin:8% auto;
-          float:none;}}}
-}
-    article{
+    aside {
       @include media($tablet){
-        @include span-columns(4);}
-      @include span-columns(9);
+        @include span-columns(4);
+        text-align: center;}
+      @include span-columns(3);
       @include pad(default);
       border-top:1px solid $neutral-light;
+        img{
+          display:block;
+          margin:8% 0;
+          float:left;
+            @include media($tablet){
+              margin:8% auto;
+              float:none;}}}}
+    article{
+      @include span-columns(9);
+      @include pad(0 default default default);
+      border-top:1px solid $neutral-light;
+      @include media($tablet){@include span-columns(4);}
         ul{
           @include pad(15px 30px);
           list-style:disc;
           margin-top:0;
-          color:$secondary-b;
-            li a{
-              color:$secondary-b;
-              line-height: 150%;}}
+        li a{
+          color:$secondary-a;
+          line-height: 150%;}}
         .list-title{
           color:$primary-b;
           padding-bottom: 8px;
           margin:0;
-          border-bottom:1px solid #fff;}        
+          border-bottom:1px solid $bckgd;}        
 }
 
 footer{
@@ -327,10 +318,10 @@ form{
           outline:none;}}
     label{
       color:$primary-b;
-      font-size:em(18);
+      font-size:em(17);
       line-height: 170%;
     }
 
     button{
-      @include button (simple, $secondary-b);}  
+      @include button (simple, $secondary-a);}  
 }
